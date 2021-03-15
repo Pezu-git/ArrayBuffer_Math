@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import Magician from '../js/Magician.js';
 import Daemon from '../js/Daemon.js';
-import Archer from '../js/Archer.js';
+import MathCharacterAttack from '../js/MathCharacterAttack.js';
 
 test('magi_test', () => {
   const merlin = new Magician();
@@ -48,6 +48,12 @@ test('daemon_test3', () => {
 });
 
 test('forTestClass_test', () => {
+  class Archer extends MathCharacterAttack {
+    constructor() {
+      super();
+      this.type = 'Archer';
+    }
+  }
   const archer = new Archer();
   archer.getAttack = 100;
   archer.distance = 2;
