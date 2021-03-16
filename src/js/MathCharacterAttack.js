@@ -1,18 +1,14 @@
-// import Character from './Character.js';
+import Character from './Character.js';
 
-export default class MathCharacterAttack {
+export default class MathCharacterAttack extends Character {
   // eslint-disable-next-line no-useless-constructor
   get getAttack() {
     // eslint-disable-next-line no-underscore-dangle
-    if (this._stoned && (this.type === 'Magician' || this.type === 'Daemon')) {
+    if (this._stoned) {
       return this.stoned;
     }
-    // eslint-disable-next-line no-underscore-dangle
-    if (!this._stoned && (this.type === 'Magician' || this.type === 'Daemon')) {
-      // eslint-disable-next-line no-return-assign
-      return this.attack *= ((10 - (this.distance - 1)) / 10);
-    }
-    return this.attack;
+    // eslint-disable-next-line no-return-assign
+    return this.attack *= ((10 - (this.distance - 1)) / 10);
   }
 
   set getAttack(value) {

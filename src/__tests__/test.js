@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import Magician from '../js/Magician.js';
 import Daemon from '../js/Daemon.js';
-import MathCharacterAttack from '../js/MathCharacterAttack.js';
+import Character from '../js/Character.js';
 
 test('magi_test', () => {
   const merlin = new Magician();
@@ -47,14 +47,8 @@ test('daemon_test3', () => {
   expect(ad.getAttack).toBe(70);
 });
 
-test('forTestClass_test', () => {
-  class Archer extends MathCharacterAttack {
-    constructor() {
-      super();
-      this.type = 'Archer';
-    }
-  }
-  const archer = new Archer();
+test('Character_test', () => {
+  const archer = new Character();
   archer.getAttack = 100;
   archer.distance = 2;
   expect(archer.getAttack).toBe(100);
